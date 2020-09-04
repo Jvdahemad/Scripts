@@ -1,0 +1,22 @@
+The transformer model is based on Google's 'Attention is all you need' paper. which can be found here: https://arxiv.org/abs/1706.03762
+
+The model is not very accurate since I've only considered a max sentence length of 20 words for training the model due to high computational requirements. But I've got decent results with it. Feel free to play around it.
+
+I've considered a vocab size of 8000 to tokenize the texts but you can try higher numbers.
+
+Data files:
+
+europarl-v7.fr-en.en: Corpus of english sentences downloaded from 'https://www.statmt.org/europarl/'
+
+europarl-v7.fr-en.fr: Corresponding frence translations
+
+P85-Non-Breaking-Prefix.en: Manually created non-breaking words, to identify 'periods' which are not end of sentences, like a.m., p.m. ect.
+
+P85-Non-Breaking-Prefix.fr: Non-breaking words for french sentences.
+
+tokenizer_en.subwords: Saved tokenizers for english words
+tokenizer_fr.subwords: Saved tokenizers for french words
+
+Transformer_weights.h5: Saved weights if you don't want to re-train your own model.
+
+You can get rid of the deployment part(Part 8) and play with the model in whatever python IDE you're using. I tried to deploy it in my local and used postman to test the API.
