@@ -1,0 +1,32 @@
+The objective is to try and implement a simple restricted boltzman Machine to make binary classification on whether a user will like a movie or not based on his previous ratings.
+
+
+Overview:
+
+Restricted Boltzman Machine is a undirected graphical model. It is 'Restricted'
+in a sense that unlike Boltzman Machine it is bipartite i.e. the hidden and visible
+nodes are connected to each other but not among themselves. This makes the visible/hidden
+nodes independent from each other which in turn siplify the calculations.
+
+The architecture of this RBM is simple and contains just 1 layer of FFNN. We try
+to calulate the hidden nodes based on some random weights and use the same weights
+to reconstruct the visible nodes. It is an energy based model and the optimization 
+is carried out by attaining a state of low energy. 
+
+The energy in our model will be defined by the weights of our model. The goal is 
+to use Contrastive Divergence to minimize the negative of log liklihood function.
+
+Our model will attain a steady state the weights can reconstruct the visible nodes
+to exactly match our observed data.
+
+The loss can be calculated based on the euclidian distance between the initial and
+final states.
+
+
+The Data is taken from gouplens.org and can be found here: https://grouplens.org/datasets/movielens/
+
+I've used just numpy to keep things as simple as possible. There aren't any noticable difference when 100k-dataset is used but I found tensorflow and pytorch are more efficient when using 1M-dataset. The pytorch implementation is just as simple and can be done by making a few changes in the code.
+
+Let me know if you've any suggestions to make this better and more comprehensive.
+
+Cheers!
